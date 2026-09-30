@@ -11,8 +11,8 @@ import {
   Cpu,
   Database,
   Globe2,
-  Mail,
   Menu,
+  MessageCircle,
   Network,
   Radar,
   Send,
@@ -26,17 +26,18 @@ import { useState, type FormEvent } from 'react'
 
 const profile = {
   name: 'Mafouzou SANNI ALIDOU',
-  email: 'sannimafouz553@gmail.com',
   github: 'https://github.com/Mafouz123',
-  linkedin: 'https://www.linkedin.com/in/votre-profil/',
+  linkedin: 'https://www.linkedin.com/in/mafouz-sanni-98704b393/',
   credly: 'https://www.credly.com/users/sanni-mafouz',
+  whatsapp: '22991177723',
+  blog: 'https://mafouz123.github.io/DigitalDecoder/',
 }
 
 const navigation = [
   { label: 'Profil', href: '#profil' },
   { label: 'Expertises', href: '#expertises' },
   { label: 'Projets', href: '#projets' },
-  { label: 'Notes', href: '#notes' },
+  { label: 'Mon parcours', href: '#parcours' },
 ]
 
 // Intégration de tes 38 compétences validées sur Credly et ton parcours
@@ -118,30 +119,6 @@ const projects = [
   },
 ]
 
-const articles = [
-  {
-    number: '01',
-    category: 'PERFORMANCE WEB',
-    title: 'Lire PageSpeed au-delà du score',
-    description: 'Relier les Core Web Vitals aux choix d’architecture et prioriser les optimisations qui comptent.',
-    readTime: '6 min',
-  },
-  {
-    number: '02',
-    category: 'IA & ACQUISITION',
-    title: 'Google Ads : où l’IA aide vraiment',
-    description: 'Des usages concrets pour accélérer l’analyse et la création, sans déléguer le jugement stratégique.',
-    readTime: '8 min',
-  },
-  {
-    number: '03',
-    category: 'SEO TECHNIQUE',
-    title: 'Screaming Frog comme outil de diagnostic',
-    description: 'Transformer un crawl en pistes d’action grâce aux segments, exports et contrôles ciblés.',
-    readTime: '5 min',
-  },
-]
-
 // Intégration exacte de tes 5 badges Credly dans la timeline
 const timeline = [
   {
@@ -204,11 +181,10 @@ function App() {
   function handleContact(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
-    const subject = encodeURIComponent(`Portfolio : ${formData.get('subject')}`)
     const body = encodeURIComponent(
-      `Bonjour,\n\n${formData.get('message')}\n\n${formData.get('name')} · ${formData.get('email')}`,
+      `Bonjour, je suis ${formData.get('name')}.\n\n${formData.get('message')}`,
     )
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+    window.open(`https://wa.me/${profile.whatsapp}?text=${body}`, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -249,7 +225,7 @@ function App() {
               <em>IA Générative</em>
             </h1>
             <p className="hero-intro">
-              Je transforme les possibilités des modèles génératifs en produits fiables, utiles et prêts à changer d’échelle.
+              Je conçois des systèmes IA et Cloud, et je rends le numérique plus accessible avec Digital Decoder, mon blog de tutoriels et de stratégie.
             </p>
             <div className="hero-actions">
               <a className="button button-dark" href="#projets">
@@ -391,27 +367,39 @@ function App() {
           </a>
         </section>
 
-        <section className="notes section-block" id="notes" aria-labelledby="notes-title">
+        <section className="story-section section-block" id="parcours" aria-labelledby="story-title">
           <div className="section-wrap">
             <SectionHeading
               index="04"
-              eyebrow="CARNET DE BORD"
-              title="Notes de terrain."
-              description="Des formats courts sur le web, la recherche et les outils qui méritent qu’on les regarde de près."
+              eyebrow="MON PARCOURS"
+              title="Comprendre, construire, faire avancer."
+              description="Un parcours guidé par la curiosité technique et l’envie de transformer des idées en systèmes utiles."
             />
-            <div className="notes-list" id="notes-title">
-              {articles.map((article) => (
-                <a href="#contact" className="note-row" key={article.number}>
-                  <span className="note-number">{article.number}</span>
-                  <span className="note-category">{article.category}</span>
-                  <span className="note-content">
-                    <strong>{article.title}</strong>
-                    <span>{article.description}</span>
-                  </span>
-                  <span className="note-time">{article.readTime}</span>
-                  <span className="note-arrow"><ArrowUpRight size={18} /></span>
-                </a>
-              ))}
+            <div className="story-grid" id="story-title">
+              <div className="story-copy">
+                <p className="story-lead">Je m’appelle Mafouzou SANNI ALIDOU. Mon parcours relie l’ingénierie des systèmes et une conviction : le numérique devient plus utile quand on sait aussi l’expliquer.</p>
+                <p className="story-body">Avec Digital Decoder, je partage des ressources pour démystifier des sujets comme l’IA, la digitalisation, l’UX et le SEO. Tutoriels pratiques, stratégie et vulgarisation me permettent de faire le pont entre des concepts complexes et des usages concrets.</p>
+                <p className="story-body">Cette démarche rejoint mes explorations techniques : j’ai notamment publié un guide autour d’un assistant documentaire RAG avec MongoDB et Groq, et des tutoriels sur les agents IA, Google Ads, PageSpeed Insights et Screaming Frog. Je cherche à construire des solutions solides, puis à transmettre clairement ce qu’elles permettent de faire.</p>
+                <a className="text-link" href={profile.credly} target="_blank" rel="noreferrer">Voir mes badges Credly <ArrowUpRight size={15} /></a>
+                <a className="text-link" href={profile.blog} target="_blank" rel="noreferrer">Lire Digital Decoder <ArrowUpRight size={15} /></a>
+              </div>
+              <div className="story-path" aria-label="Les étapes de mon approche professionnelle">
+                <article className="story-step">
+                  <span className="story-step-number">01</span>
+                  <div><h3>Partir du besoin</h3><p>Écouter le contexte et clarifier le problème avant de choisir la technologie.</p></div>
+                  <span className="story-step-mark">CURIOSITÉ</span>
+                </article>
+                <article className="story-step">
+                  <span className="story-step-number">02</span>
+                  <div><h3>Relier les briques</h3><p>Faire dialoguer données, modèles et infrastructure dans une architecture cohérente.</p></div>
+                  <span className="story-step-mark">INGÉNIERIE</span>
+                </article>
+                <article className="story-step">
+                  <span className="story-step-number">03</span>
+                  <div><h3>Apprendre en livrant</h3><p>Tester, mesurer et améliorer pour que l’innovation garde une valeur concrète.</p></div>
+                  <span className="story-step-mark">IMPACT</span>
+                </article>
+              </div>
             </div>
           </div>
         </section>
@@ -421,29 +409,28 @@ function App() {
             index="05"
             eyebrow="PRENDRE CONTACT"
             title="Construisons quelque chose de solide."
-            description="Une idée, une équipe qui explore l’IA, ou simplement envie d’échanger ? Ma boîte mail est ouverte."
+            description="Une idée, une équipe qui explore l’IA, ou simplement envie d’échanger ? Écris-moi directement sur WhatsApp."
           />
           <div className="contact-grid">
             <div className="contact-direct">
               <span className="contact-overline"><span className="availability-dot" /> OUVERT AUX CONVERSATIONS</span>
-              <a className="email-link" href={`mailto:${profile.email}`}>
-                {profile.email}<ArrowUpRight size={20} />
+              <a className="whatsapp-link" href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noreferrer">
+                <MessageCircle size={19} /> Me contacter sur WhatsApp <ArrowUpRight size={20} />
               </a>
               <div className="social-links">
                 <a href={profile.linkedin} target="_blank" rel="noreferrer"><Network size={16} /> LinkedIn <ArrowUpRight size={13} /></a>
                 <a href={profile.github} target="_blank" rel="noreferrer"><Braces size={16} /> GitHub <ArrowUpRight size={13} /></a>
                 <a href={profile.credly} target="_blank" rel="noreferrer"><Sparkles size={16} /> Credly <ArrowUpRight size={13} /></a>
+                <a href={profile.blog} target="_blank" rel="noreferrer"><Globe2 size={16} /> Digital Decoder <ArrowUpRight size={13} /></a>
               </div>
             </div>
             <form className="contact-form" onSubmit={handleContact}>
               <label>Ton nom<input name="name" autoComplete="name" placeholder="Comment t’appelles-tu ?" required /></label>
-              <label>Ton e-mail<input name="email" type="email" autoComplete="email" placeholder="toi@exemple.com" required /></label>
-              <label>Sujet<input name="subject" placeholder="Le sujet de ton message" required /></label>
-              <label>Ton message<textarea name="message" rows={3} placeholder="Quelques lignes suffisent…" required /></label>
+              <label>Ton message<textarea name="message" rows={4} placeholder="Quelques lignes suffisent…" required /></label>
               <button className="button button-dark" type="submit">
-                Préparer l’e-mail <Send size={15} />
+                Continuer sur WhatsApp <Send size={15} />
               </button>
-              <span className="form-hint"><Mail size={13} /> Ouvre ton application e-mail, aucun message n’est stocké ici.</span>
+              <span className="form-hint"><MessageCircle size={13} /> WhatsApp s’ouvrira avec ton message prêt à envoyer.</span>
             </form>
           </div>
         </section>
