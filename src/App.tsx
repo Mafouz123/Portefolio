@@ -447,7 +447,10 @@ function App() {
   const skillCategoryLabels: Record<string, string> = language === 'fr'
     ? { 'IA & MongoDB': 'IA & DONNÉES', Cloud: 'CLOUD', DEV: 'DÉVELOPPEMENT', OPS: 'OPS & MLOPS', Ingénierie: 'INGÉNIERIE', Management: 'MANAGEMENT', Design: 'DESIGN & PRODUIT', Communication: 'COMMUNICATION' }
     : { 'IA & MongoDB': 'AI & DATA', Cloud: 'CLOUD', DEV: 'DEVELOPMENT', OPS: 'OPS & MLOPS', Ingénierie: 'ENGINEERING', Management: 'MANAGEMENT', Design: 'DESIGN & PRODUCT', Communication: 'COMMUNICATION' }
-  const skillCategoryOrder = ['IA & MongoDB', 'Cloud', 'DEV', 'OPS', 'Ingénierie', 'Management', 'Design', 'Communication']
+  const skillCategoryColumns = [
+    ['IA & MongoDB', 'Management', 'Design', 'Communication'],
+    ['Cloud', 'DEV', 'OPS', 'Ingénierie'],
+  ]
 
   function handleContact(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -589,14 +592,18 @@ function App() {
               description={text.expertiseDescription}
             />
             <div className="skills-grid" id="expertise-title">
-              {skillCategoryOrder.map((category) => (
-                <div className="skill-group" key={category}>
-                  <h3>{skillCategoryLabels[category]}</h3>
-                  {skills.filter((skill) => skill.category === category).map(({ name, icon: Icon }) => (
-                    <div className="skill-row" key={name}>
-                      <span className="skill-icon"><Icon size={19} strokeWidth={1.65} /></span>
-                      <span className="skill-name">{name}</span>
-                      <ArrowUpRight size={15} className="skill-arrow" />
+              {skillCategoryColumns.map((column, index) => (
+                <div className="skills-column" key={index}>
+                  {column.map((category) => (
+                    <div className="skill-group" data-category={category} key={category}>
+                      <h3>{skillCategoryLabels[category]}</h3>
+                      {skills.filter((skill) => skill.category === category).map(({ name, icon: Icon }) => (
+                        <div className="skill-row" key={name}>
+                          <span className="skill-icon"><Icon size={19} strokeWidth={1.65} /></span>
+                          <span className="skill-name">{name}</span>
+                          <ArrowUpRight size={15} className="skill-arrow" />
+                        </div>
+                      ))}
                     </div>
                   ))}
                 </div>

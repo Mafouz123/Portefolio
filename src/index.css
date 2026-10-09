@@ -119,9 +119,9 @@ button, input, textarea { font-size: inherit; }
 .expertise { background: #e8e9df; position: relative; }
 .expertise::before { content: ''; position: absolute; inset: 0; opacity: .23; pointer-events: none; background-image: radial-gradient(#929786 0.65px, transparent .65px); background-size: 17px 17px; mask-image: linear-gradient(90deg, transparent, black 30%, black 83%, transparent); }
 .expertise .section-wrap { position: relative; }
-.skills-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 64px; padding-top: 35px; }
-.skill-group h3 { margin: 24px 0 4px; color: #73766d; font: 10px/1.4 var(--mono); }
-.skill-group:first-child h3 { margin-top: 0; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; column-gap: 64px; padding-top: 35px; }
+.skills-column { display: grid; align-content: start; row-gap: 28px; }
+.skill-group h3 { margin: 0 0 4px; color: #73766d; font: 10px/1.4 var(--mono); }
 .skill-row { display: grid; grid-template-columns: 38px 1fr 17px; gap: 13px; align-items: center; min-height: 70px; border-bottom: 1px solid #cdd0c4; }
 .skill-icon { height: 33px; width: 33px; display: grid; place-items: center; color: #526d2c; border: 1px solid #c4cbbc; }
 .skill-name { font-size: 14px; font-weight: 600; }
@@ -270,7 +270,16 @@ button, input, textarea { font-size: inherit; }
   .large-copy { font-size: 29px; }
   .profile-portrait { width: 150px; height: 160px; margin-bottom: 22px; }
   .body-copy { font-size: 13px; }
-  .skills-grid { grid-template-columns: 1fr; padding-top: 22px; }
+  .skills-grid { grid-template-columns: 1fr; gap: 22px; padding-top: 22px; }
+  .skills-column { display: contents; }
+  .skill-group[data-category='Cloud'] { order: 1; }
+  .skill-group[data-category='DEV'] { order: 2; }
+  .skill-group[data-category='OPS'] { order: 3; }
+  .skill-group[data-category='Ingénierie'] { order: 4; }
+  .skill-group[data-category='IA & MongoDB'] { order: 5; }
+  .skill-group[data-category='Management'] { order: 6; }
+  .skill-group[data-category='Design'] { order: 7; }
+  .skill-group[data-category='Communication'] { order: 8; }
   .skill-row { min-height: 64px; grid-template-columns: 37px 1fr 16px; gap: 9px; }
   .skill-name { font-size: 13px; }
   .skill-category { font-size: 8px; }
