@@ -214,8 +214,8 @@ const englishCertificateMonths: Record<string, string> = {
   juillet: 'July', août: 'August', septembre: 'September', octobre: 'October', novembre: 'November', décembre: 'December',
 }
 
-function certificateDate(date: string, language: Language) {
-  if (language === 'fr') return date
+function certificateDate(date: string | undefined, language: Language) {
+  if (!date || language === 'fr') return date ?? ''
   return date
     .replace('Année à confirmer', 'Year to be confirmed')
     .replace('Session juin', 'June session')
@@ -225,7 +225,7 @@ function certificateDate(date: string, language: Language) {
 
 type Certificate = {
   title: string
-  date: string
+  date?: string
   identifier?: string
   href?: string
 }
@@ -263,23 +263,24 @@ const certificateGroups: { institution: string; certificates: Certificate[] }[] 
   {
     institution: 'SoloLearn',
     certificates: [
-      { title: 'Pensée critique à l’ère de l’IA', date: '2 avril 2026', identifier: 'CC-ZEZY6NOV' },
-      { title: 'AI-Powered Product & UX', date: '9 janvier 2026', identifier: 'CC-EBQMJKNA' },
-      { title: 'Ingénierie de prompts', date: '8 octobre 2025', identifier: 'CC-OZBNHKCG' },
-      { title: 'Flux de travail agentiques', date: '17 décembre 2025', identifier: 'CC-3UR1FAGK' },
-      { title: 'Fondements de l’apprentissage automatique', date: '7 octobre 2025', identifier: 'CC-FKLAIMXD' },
-      { title: 'Planification de projet avec IA', date: '10 octobre 2025', identifier: 'CC-3BLISKPV' },
-      { title: 'Angular', date: '12 octobre 2025', identifier: 'CC-17LDTMDF' },
+      { title: 'Pensée critique à l’ère de l’IA', date: '2 avril 2026', identifier: 'CC-ZEZY6NOV', href: 'https://www.sololearn.com/certificates/CC-ZEZY6NOV' },
+      { title: 'AI-Powered Product & UX', date: '9 janvier 2026', identifier: 'CC-EBQMJKNA', href: 'https://www.sololearn.com/certificates/CC-EBQMJKNA' },
+      { title: 'Ingénierie de prompts', date: '8 octobre 2025', identifier: 'CC-OZBNHKCG', href: 'https://www.sololearn.com/certificates/CC-OZBNHKCG' },
+      { title: 'Flux de travail agentiques', date: '17 décembre 2025', identifier: 'CC-3UR1FAGK', href: 'https://www.sololearn.com/certificates/CC-3UR1FAGK' },
+      { title: 'Fondements de l’apprentissage automatique', date: '7 octobre 2025', identifier: 'CC-FKLAIMXD', href: 'https://www.sololearn.com/certificates/CC-FKLAIMXD' },
+      { title: 'Planification de projet avec IA', date: '10 octobre 2025', identifier: 'CC-3BLISKPV', href: 'https://www.sololearn.com/certificates/CC-3BLISKPV' },
+      { title: 'Angular', date: '12 octobre 2025', identifier: 'CC-17LDTMDF', href: 'https://www.sololearn.com/certificates/CC-17LDTMDF' },
       { title: 'Développeur Python', date: '14 octobre 2025', identifier: 'CC-14ZVECAM' },
-      { title: 'Introduction à SQL', date: '14 octobre 2025', identifier: 'CC-8PGVUTTQ' },
-      { title: 'Analyse de données avec l’IA', date: '15 octobre 2025', identifier: 'CC-XPBOYSGL' },
-      { title: 'Développement web', date: '12 novembre 2025', identifier: 'CC-VZ2UYVD9' },
-      { title: 'Programmation d’ambiance (Vibe Coding)', date: '13 novembre 2025', identifier: 'CC-RM8ZTCGO' },
-      { title: 'Marketing des médias sociaux avec l’IA', date: '14 novembre 2025', identifier: 'CC-IAXHJXZL' },
-      { title: 'SEO avec IA', date: 'Année à confirmer', identifier: 'CC-85IWBKBB' },
-      { title: 'IA générative en pratique', date: '16 novembre 2025', identifier: 'CC-JQ21KFAV' },
-      { title: 'Tests A/B alimentés par l’IA', date: '7 janvier 2026', identifier: 'CC-BWSC6RAG' },
-      { title: 'Growth Mindset in the Age of AI', date: '6 février 2026', identifier: 'CC-UFGHBPNR' },
+      { title: 'Introduction à SQL', date: '14 octobre 2025', identifier: 'CC-8PGVUTTQ', href: 'https://www.sololearn.com/certificates/CC-8PGVUTTQ' },
+      { title: 'Analyse de données avec l’IA', date: '15 octobre 2025', identifier: 'CC-XPBOYSGL', href: 'https://www.sololearn.com/certificates/CC-XPBOYSGL' },
+      { title: 'Développement web', date: '12 novembre 2025', identifier: 'CC-VZ2UYVD9', href: 'https://www.sololearn.com/certificates/CC-VZ2UYVD9' },
+      { title: 'Programmation d’ambiance (Vibe Coding)', date: '13 novembre 2025', identifier: 'CC-RM8ZTCG0', href: 'https://www.sololearn.com/certificates/CC-RM8ZTCG0' },
+      { title: 'Marketing des médias sociaux avec l’IA', date: '14 novembre 2025', identifier: 'CC-IAXHJXZL', href: 'https://www.sololearn.com/certificates/CC-IAXHJXZL' },
+      { title: 'SEO avec IA', date: 'Année à confirmer', identifier: 'CC-85IWBKBB', href: 'https://www.sololearn.com/certificates/CC-85IWBKBB' },
+      { title: 'Détection et atténuation des biais dans les systèmes d’IA', identifier: 'CC-ODRSH8WR', href: 'https://www.sololearn.com/certificates/CC-ODRSH8WR' },
+      { title: 'IA générative en pratique', date: '16 novembre 2025', identifier: 'CC-JQ2IKFAV', href: 'https://www.sololearn.com/certificates/CC-JQ2IKFAV' },
+      { title: 'Tests A/B alimentés par l’IA', date: '7 janvier 2026', identifier: 'CC-BWSC6RAG', href: 'https://www.sololearn.com/certificates/CC-BWSC6RAG' },
+      { title: 'Growth Mindset in the Age of AI', date: '6 février 2026', identifier: 'CC-UFGHBPNR', href: 'https://www.sololearn.com/certificates/CC-UFGHBPNR' },
     ],
   },
   {
@@ -568,7 +569,7 @@ function App() {
                       <span className="certificate-issuer">
                         {language === 'en' && group.institution === 'Ministère de l’Enseignement supérieur (Bénin)' ? 'Ministry of Higher Education (Benin)' : group.institution}
                       </span>
-                      <span className="timeline-date">{certificateDate(certificate.date, language)}</span>
+                      {certificate.date && <span className="timeline-date">{certificateDate(certificate.date, language)}</span>}
                     </div>
                     <h4>{certificate.title}</h4>
                     {certificate.href && (
