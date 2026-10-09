@@ -78,7 +78,8 @@ const translations = {
     educationDescription: 'Cursus de trois ans complété. Développement de fortes capacités d’analyse et de rédaction administrative.',
     educationStatus: 'Finalisation en cours',
     leadership: 'LEADERSHIP',
-    presidentRole: 'Président — AIESEC Parakou',
+    presidentRole: 'AIESEC Parakou — Manager d’Expansion de la Special Unit (SU)',
+    presidentDescription: 'Fondateur de l’antenne locale à l’Université de Parakou, j’ai conduit son évolution d’un groupe d’intérêt vers un comité local accrédité. J’ai mobilisé plus de 100 aspirants et accompagné 17 membres officiels, tout en structurant le premier bureau exécutif et la gouvernance de l’organisation.',
     teamLeadRole: 'Team Lead — UNFPA',
     expertiseEyebrow: 'COMPÉTENCES & OUTILS',
     expertiseTitle: 'Du modèle à la mise en production.',
@@ -98,6 +99,7 @@ const translations = {
     storyLead: 'Le vibe coding représente plus de 90 % de ma pratique au quotidien. C’est ma signature : je travaille avec l’IA pour passer rapidement de l’idée au produit, sans déléguer mon jugement d’ingénieur.',
     storyBodyOne: 'Je définis le besoin, guide la génération de code, puis j’examine, teste et améliore chaque résultat. Cette boucle de co-création me permet d’explorer plus vite tout en gardant la responsabilité de l’architecture, de la fiabilité et de l’expérience utilisateur.',
     storyBodyTwo: 'Ingénieur solution en IA générative basé à Cotonou, je m’intéresse aux applications RAG, à MongoDB et aux architectures Cloud. Avec Digital Decoder, je rends aussi les sujets techniques plus accessibles à travers des tutoriels et des contenus de vulgarisation.',
+    storyAiesec: 'Fondateur et président d’AIESEC Parakou de 2018 à 2021, j’ai bâti l’antenne universitaire dans le Nord-Bénin. En trois mandats, j’ai structuré sa croissance jusqu’à son accréditation officielle, mobilisé plus de 100 aspirants et constitué une équipe de 17 membres officiels.',
     readBlog: 'Lire Digital Decoder',
     storyAria: 'Les étapes de mon approche professionnelle',
     steps: [
@@ -161,7 +163,8 @@ const translations = {
     educationDescription: 'Completed a three-year programme, developing strong analytical and administrative writing skills.',
     educationStatus: 'Final administrative steps in progress',
     leadership: 'LEADERSHIP',
-    presidentRole: 'President — AIESEC Parakou',
+    presidentRole: 'AIESEC Parakou — Expansion Manager — Special Unit (SU)',
+    presidentDescription: 'I founded the local chapter at the University of Parakou and led its growth from an interest group to an accredited local committee. I mobilized more than 100 prospective members and supported 17 official members, while establishing the first executive board and organizational governance.',
     teamLeadRole: 'Team Lead — UNFPA',
     expertiseEyebrow: 'SKILLS & TOOLS',
     expertiseTitle: 'From model to production.',
@@ -181,6 +184,7 @@ const translations = {
     storyLead: 'Vibe coding accounts for 90+% of my day-to-day work. It is my signature: I work with AI to move quickly from idea to product without handing over my engineering judgment.',
     storyBodyOne: 'I define the need, guide code generation, then review, test and improve every result. This co-creation loop lets me explore faster while remaining responsible for architecture, reliability and user experience.',
     storyBodyTwo: 'Based in Cotonou, I focus on generative AI solutions, RAG applications, MongoDB and cloud architectures. Through Digital Decoder, I also make technical topics more accessible with tutorials and educational content.',
+    storyAiesec: 'As founder and president of AIESEC Parakou from 2018 to 2021, I built the university chapter in northern Benin. Over three terms, I structured its growth through official accreditation, mobilized more than 100 prospective members and built a team of 17 official members.',
     readBlog: 'Read Digital Decoder',
     storyAria: 'The steps in my professional approach',
     steps: [
@@ -304,48 +308,49 @@ const skills: { name: string; icon: LucideIcon; category: string }[] = [
   { name: 'AI Agents Creation', icon: Workflow, category: 'IA & MongoDB' },
   { name: 'GenAI Evaluation', icon: Cpu, category: 'IA & MongoDB' },
   // Cloud, Systèmes & MLOps
-  { name: 'AWS Cloud Architecture', icon: Network, category: 'Cloud & DevOps' },
-  { name: 'Docker & MLOps', icon: Cpu, category: 'Cloud & DevOps' },
-  { name: 'Python & APIs', icon: Workflow, category: 'Ingénierie' },
+  { name: 'AWS Cloud Architecture', icon: Network, category: 'Cloud' },
+  { name: 'Docker & MLOps', icon: Cpu, category: 'OPS' },
+  { name: 'Python & APIs', icon: Workflow, category: 'DEV' },
   { name: 'Prompt Engineering', icon: Braces, category: 'Ingénierie' },
   // Développement Web & Produit
-  { name: 'React & Vite', icon: Atom, category: 'Produit Web' },
-  { name: 'TypeScript', icon: Braces, category: 'Produit Web' },
-  { name: 'Tailwind CSS', icon: Globe2, category: 'Produit Web' },
+  { name: 'React & Vite', icon: Atom, category: 'DEV' },
+  { name: 'TypeScript', icon: Braces, category: 'DEV' },
+  { name: 'Tailwind CSS', icon: Globe2, category: 'DEV' },
   { name: 'Agile & Scrum', icon: Radar, category: 'Management' },
   { name: 'UI/UX Design', icon: Sparkles, category: 'Design' },
   // Compétences complémentaires de ton portefeuille global
-  { name: 'Git & GitHub Actions', icon: Network, category: 'Outils' },
-  { name: 'REST APIs', icon: Workflow, category: 'Ingénierie' },
-  { name: 'Data Structures', icon: Database, category: 'Ingénierie' },
-  { name: 'Software Architecture', icon: Cpu, category: 'Ingénierie' },
-  { name: 'Performance Optimization', icon: Zap, category: 'Produit Web' },
-  { name: 'Debugging & Testing', icon: Check, category: 'Ingénierie' },
-  { name: 'Cloud Security', icon: Network, category: 'Cloud & DevOps' },
-  { name: 'Containerization', icon: Cpu, category: 'Cloud & DevOps' },
+  { name: 'Git & GitHub Actions', icon: Network, category: 'OPS' },
+  { name: 'REST APIs', icon: Workflow, category: 'DEV' },
+  { name: 'Data Structures', icon: Database, category: 'DEV' },
+  { name: 'Software Architecture', icon: Cpu, category: 'DEV' },
+  { name: 'Performance Optimization', icon: Zap, category: 'DEV' },
+  { name: 'Debugging & Testing', icon: Check, category: 'OPS' },
+  { name: 'Cloud Security', icon: Network, category: 'Cloud' },
+  { name: 'Containerization', icon: Cpu, category: 'OPS' },
   { name: 'NoSQL Databases', icon: Database, category: 'IA & MongoDB' },
-  { name: 'Workflow Automation', icon: Workflow, category: 'Ingénierie' },
+  { name: 'Workflow Automation', icon: Workflow, category: 'OPS' },
   { name: 'Technical Writing', icon: Braces, category: 'Communication' },
   { name: 'Problem Solving', icon: Sparkles, category: 'Management' },
-  { name: 'Continuous Integration', icon: Network, category: 'Cloud & DevOps' },
-  { name: 'Responsive Design', icon: Globe2, category: 'Produit Web' },
+  { name: 'Continuous Integration', icon: Network, category: 'OPS' },
+  { name: 'Responsive Design', icon: Globe2, category: 'DEV' },
   { name: 'Collaboration', icon: Radar, category: 'Management' },
 ]
 
 const projects = [
   {
     number: '01',
-    title: 'Copilote documentaire RAG',
-    titleEn: 'RAG document copilot',
-    type: 'PROJET · IA GÉNÉRATIVE & MONGODB',
-    typeEn: 'PROJECT · GENERATIVE AI & MONGODB',
-    description: 'Une interface de recherche connectant un LLM à un corpus métier via MongoDB Vector Search.',
-    descriptionEn: 'A search interface connecting an LLM to a business knowledge base through MongoDB Vector Search.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1100&q=85',
-    alt: 'Visualisation abstraite d’un réseau neuronal lumineux',
-    altEn: 'Abstract visualization of a glowing neural network',
+    title: 'Agent IA RAG avec MongoDB Atlas',
+    titleEn: 'MongoDB Atlas RAG AI Agent',
+    type: 'ÉTUDE DE CAS · IA GÉNÉRATIVE & MONGODB',
+    typeEn: 'CASE STUDY · GENERATIVE AI & MONGODB',
+    description: 'Un agent documentaire qui recherche dans des sources d’entreprise et formule des réponses étayées.',
+    descriptionEn: 'A document agent that searches enterprise sources and produces grounded answers.',
+    image: `${import.meta.env.BASE_URL}mes_doc/mongodb-agent-05.png`,
+    alt: 'Interface Streamlit de l’agent documentaire MongoDB',
+    altEn: 'Streamlit interface for the MongoDB document agent',
     tags: ['Python', 'RAG', 'MongoDB'],
-    href: profile.github,
+    pageHref: `${import.meta.env.BASE_URL}mongodb-ai-agent.html`,
+    repositoryHref: 'https://github.com/Mafouz123/mongodb-ai-agent',
   },
   {
     number: '02',
@@ -439,9 +444,10 @@ function App() {
     { label: text.nav.journey, href: '#parcours' },
   ]
 
-  const skillCategoryLabels = language === 'fr'
-    ? { 'IA & MongoDB': 'IA & MongoDB', 'Cloud & DevOps': 'Cloud & DevOps', Ingénierie: 'Ingénierie', 'Produit Web': 'Produit Web', Management: 'Management', Design: 'Design', Outils: 'Outils', Communication: 'Communication' }
-    : { 'IA & MongoDB': 'AI & MongoDB', 'Cloud & DevOps': 'Cloud & DevOps', Ingénierie: 'Engineering', 'Produit Web': 'Web Product', Management: 'Management', Design: 'Design', Outils: 'Tools', Communication: 'Communication' }
+  const skillCategoryLabels: Record<string, string> = language === 'fr'
+    ? { 'IA & MongoDB': 'IA & DONNÉES', Cloud: 'CLOUD', DEV: 'DÉVELOPPEMENT', OPS: 'OPS & MLOPS', Ingénierie: 'INGÉNIERIE', Management: 'MANAGEMENT', Design: 'DESIGN & PRODUIT', Communication: 'COMMUNICATION' }
+    : { 'IA & MongoDB': 'AI & DATA', Cloud: 'CLOUD', DEV: 'DEVELOPMENT', OPS: 'OPS & MLOPS', Ingénierie: 'ENGINEERING', Management: 'MANAGEMENT', Design: 'DESIGN & PRODUCT', Communication: 'COMMUNICATION' }
+  const skillCategoryOrder = ['IA & MongoDB', 'Cloud', 'DEV', 'OPS', 'Ingénierie', 'Management', 'Design', 'Communication']
 
   function handleContact(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -583,12 +589,16 @@ function App() {
               description={text.expertiseDescription}
             />
             <div className="skills-grid" id="expertise-title">
-              {skills.map(({ name, icon: Icon, category }) => (
-                <div className="skill-row" key={name}>
-                  <span className="skill-icon"><Icon size={19} strokeWidth={1.65} /></span>
-                  <span className="skill-name">{name}</span>
-                  <span className="skill-category">{skillCategoryLabels[category as keyof typeof skillCategoryLabels]}</span>
-                  <ArrowUpRight size={15} className="skill-arrow" />
+              {skillCategoryOrder.map((category) => (
+                <div className="skill-group" key={category}>
+                  <h3>{skillCategoryLabels[category]}</h3>
+                  {skills.filter((skill) => skill.category === category).map(({ name, icon: Icon }) => (
+                    <div className="skill-row" key={name}>
+                      <span className="skill-icon"><Icon size={19} strokeWidth={1.65} /></span>
+                      <span className="skill-name">{name}</span>
+                      <ArrowUpRight size={15} className="skill-arrow" />
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
@@ -608,9 +618,9 @@ function App() {
             description={text.projectDescription}
           />
           <div className="project-list" id="projects-title">
-            {projects.map((project) => (
+                {projects.slice(0, 1).map((project) => (
               <article className="project-card" key={project.number}>
-                <a className="project-image" href={project.href} target="_blank" rel="noreferrer" aria-label={`${text.viewRepository} ${language === 'fr' ? project.title : project.titleEn}`}>
+                <a className="project-image" href={project.pageHref ?? project.href} aria-label={`${language === 'fr' ? 'Lire l’étude de cas' : 'Read the case study'} : ${language === 'fr' ? project.title : project.titleEn}`}>
                   <img src={project.image} alt={language === 'fr' ? project.alt : project.altEn} loading="lazy" />
                   <span className="project-image-index">{project.number} / {text.concept}</span>
                   <span className="project-open"><ArrowUpRight size={21} /></span>
@@ -627,12 +637,78 @@ function App() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
-                  <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
+                  <a className="project-link" href={project.pageHref ?? project.href}>
+                    {language === 'fr' ? 'Lire l’étude de cas complète' : 'Read the full case study'} <ArrowRight size={14} />
+                  </a>
+                  <a className="project-link" href={project.repositoryHref ?? project.href} target="_blank" rel="noreferrer">
                     {text.githubRepository} <ArrowUpRight size={14} />
                   </a>
                 </div>
               </article>
             ))}
+          </div>
+          <div className="project-case-study" hidden>
+            <div className="case-study-overview">
+              <section>
+                <span className="case-study-label">{language === 'fr' ? '01 / PROBLÈME' : '01 / PROBLEM'}</span>
+                <h3>{language === 'fr' ? 'Des réponses ancrées dans les données.' : 'Answers grounded in enterprise data.'}</h3>
+                <p>{language === 'fr'
+                  ? 'Un modèle de langage généraliste ne connaît pas les données privées ou récentes d’une organisation et peut produire des informations sans sources vérifiables.'
+                  : 'A general-purpose language model lacks access to an organization’s private or recent data and may generate claims without verifiable sources.'}</p>
+              </section>
+              <section>
+                <span className="case-study-label">{language === 'fr' ? '02 / APPROCHE' : '02 / APPROACH'}</span>
+                <h3>{language === 'fr' ? 'Récupérer avant de générer.' : 'Retrieve before generating.'}</h3>
+                <p>{language === 'fr'
+                  ? 'L’agent recherche les passages pertinents dans MongoDB Atlas Vector Search, puis transmet ce contexte au modèle pour une réponse synthétique et traçable.'
+                  : 'The agent retrieves relevant passages through MongoDB Atlas Vector Search, then gives that context to the model to produce a concise, traceable answer.'}</p>
+              </section>
+            </div>
+            <section className="project-pipeline">
+              <span className="case-study-label">{language === 'fr' ? '03 / PIPELINE DOCUMENTAIRE' : '03 / DOCUMENT PIPELINE'}</span>
+              <ol>
+                {(language === 'fr' ? [
+                  { title: 'Ingestion', body: 'Lire et préparer les documents PDF, Markdown et JSON avec leurs métadonnées.' },
+                  { title: 'Découpage', body: 'Segmenter le corpus en passages de 512 caractères avec un chevauchement de 52 caractères.' },
+                  { title: 'Vectorisation', body: 'Créer des embeddings avec Voyage AI afin de représenter le sens des passages.' },
+                  { title: 'Recherche & génération', body: 'MongoDB Atlas Vector Search retrouve le contexte utile ; l’agent LangGraph et LangChain orchestre les outils et Groq formule la réponse.' },
+                ] : [
+                  { title: 'Ingestion', body: 'Read and prepare PDF, Markdown and JSON documents with their metadata.' },
+                  { title: 'Chunking', body: 'Split the corpus into 512-character passages with a 52-character overlap.' },
+                  { title: 'Embeddings', body: 'Create Voyage AI embeddings to represent the meaning of each passage.' },
+                  { title: 'Retrieval & generation', body: 'MongoDB Atlas Vector Search retrieves useful context; the LangGraph and LangChain agent orchestrates tools and Groq generates the answer.' },
+                ]).map((stage, index) => (
+                  <li key={stage.title}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <div><h3>{stage.title}</h3><p>{stage.body}</p></div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+            <div className="case-study-tools">
+              <span>STACK</span>
+              <p>Python · MongoDB Atlas Vector Search · LangChain · LangGraph · Voyage AI · Groq · Streamlit</p>
+            </div>
+            <div className="project-gallery">
+              {[
+                { file: '01', fr: 'Découpage du corpus', en: 'Corpus chunking', altFr: 'Schéma du découpage documentaire en chunks', altEn: 'Diagram of document chunking' },
+                { file: '02', fr: 'Structure des documents indexés', en: 'Indexed document structure', altFr: 'Structure d’un document MongoDB indexé', altEn: 'Structure of an indexed MongoDB document' },
+                { file: '03', fr: 'Champs et embeddings', en: 'Fields and embeddings', altFr: 'Données et vecteurs du document MongoDB', altEn: 'MongoDB document data and vectors' },
+                { file: '04', fr: 'Recherche vectorielle', en: 'Vector search', altFr: 'Illustration de la recherche vectorielle MongoDB', altEn: 'Illustration of MongoDB vector search' },
+                { file: '05', fr: 'Interface de test', en: 'Test interface', altFr: 'Capture de l’interface Streamlit de l’agent', altEn: 'Screenshot of the agent Streamlit interface' },
+                { file: '06', fr: 'Démonstration de l’agent', en: 'Agent demonstration', altFr: 'Capture de la démonstration de l’agent RAG', altEn: 'Screenshot of the RAG agent demonstration' },
+              ].map((media) => (
+                <figure key={media.file}>
+                  <img
+                    src={`${import.meta.env.BASE_URL}mes_doc/mongodb-agent-${media.file}.png`}
+                    alt={language === 'fr' ? media.altFr : media.altEn}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>{language === 'fr' ? media.fr : media.en}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
           <a className="all-projects" href={profile.github} target="_blank" rel="noreferrer">
             <Braces size={17} /> {text.allRepositories} <ArrowRight size={16} />
@@ -652,6 +728,7 @@ function App() {
                 <p className="story-lead">{text.storyLead}</p>
                 <p className="story-body">{text.storyBodyOne}</p>
                 <p className="story-body">{text.storyBodyTwo}</p>
+                <p className="story-body story-aiesec">{text.storyAiesec}</p>
                 <a className="text-link" href={profile.blog} target="_blank" rel="noreferrer">{text.readBlog} <ArrowUpRight size={15} /></a>
               </div>
               <div className="story-path" aria-label={text.storyAria}>
@@ -674,7 +751,8 @@ function App() {
               </article>
               <article className="journey-detail">
                 <div className="journey-detail-heading"><UsersRound size={19} /><h3>{text.leadership}</h3></div>
-                <div className="leadership-row"><strong>{text.presidentRole}</strong><span>2019–2021</span></div>
+                <div className="leadership-row"><strong>{text.presidentRole}</strong><span>2018–2021</span></div>
+                <p className="leadership-description">{text.presidentDescription}</p>
                 <div className="leadership-row"><strong>{text.teamLeadRole}</strong><span>2019–2020</span></div>
               </article>
             </div>
